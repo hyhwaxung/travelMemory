@@ -108,10 +108,10 @@ extension TabBarViewController {
 extension TabBarViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController.tabBarItem.tag == 2 {
-            let modalViewController = RegisterViewController()
-            modalViewController.modalPresentationStyle = .fullScreen
-            let navigationView = UINavigationController(rootViewController: modalViewController)
-            present(navigationView, animated: true)
+            let registerViewController = RegisterViewController()
+            registerViewController.hidesBottomBarWhenPushed = true
+            registerViewController.navigationItem.title = "내 주변 등록"
+            navigationController?.pushViewController(registerViewController, animated: true)
             
             return false
         } else {
