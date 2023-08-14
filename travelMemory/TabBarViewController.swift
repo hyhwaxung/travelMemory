@@ -11,8 +11,11 @@ class TabBarViewController: UITabBarController {
     
     private lazy var recommendViewcontroller: UINavigationController = {
         let viewController = RecommendViewController()
-        let tabBarItem = UITabBarItem(title: "추천", image: UIImage(named: "recommendViewButton"), tag: 0)
-        tabBarItem.imageInsets = UIEdgeInsets(top: 40, left: 0, bottom: 40, right: 0)
+        let image = UIImage(systemName: "star", withConfiguration: UIImage.SymbolConfiguration(font: .systemFont(ofSize: 22)))
+        let tabBarItem = UITabBarItem()
+        tabBarItem.title = "추천"
+        tabBarItem.image = image
+        tabBarItem.tag = 0
         viewController.tabBarItem = tabBarItem
         let navigationView = UINavigationController(rootViewController: viewController)
         return navigationView
@@ -20,8 +23,11 @@ class TabBarViewController: UITabBarController {
     
     private lazy var mainViewController: UINavigationController = {
         let viewController = MainViewController()
-        let tabBarItem = UITabBarItem(title: "내 주변", image: UIImage(named: "mainViewButton"), tag: 1)
-        tabBarItem.imageInsets = UIEdgeInsets(top: 40, left: 0, bottom: 40, right: 0)
+        let image = UIImage(systemName: "location.north", withConfiguration: UIImage.SymbolConfiguration(font: .systemFont(ofSize: 22)))
+        let tabBarItem = UITabBarItem()
+        tabBarItem.title = "내 주변"
+        tabBarItem.image = image
+        tabBarItem.tag = 1
         viewController.tabBarItem = tabBarItem
         let navigationView = UINavigationController(rootViewController: viewController)
         return navigationView
@@ -29,8 +35,10 @@ class TabBarViewController: UITabBarController {
     
     private lazy var registerViewController: UINavigationController = {
         let viewController = RegisterViewController()
-        let tabBarItem = UITabBarItem(title: "등록", image: UIImage(named: "registerViewButton"), tag: 2)
-        tabBarItem.imageInsets = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        let image = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(font: .systemFont(ofSize: 24)))?.withTintColor(.blue, renderingMode: .alwaysOriginal)
+        let tabBarItem = UITabBarItem()
+        tabBarItem.image = image
+        tabBarItem.tag = 2
         viewController.tabBarItem = tabBarItem
         let navigationView = UINavigationController(rootViewController: viewController)
         return navigationView
@@ -38,8 +46,11 @@ class TabBarViewController: UITabBarController {
     
     private lazy var favoriteViewController: UINavigationController = {
         let viewController = FavoriteViewController()
-        let tabBarItem = UITabBarItem(title: "찜", image: UIImage(named: "favoriteViewButton"), tag: 3)
-        tabBarItem.imageInsets = UIEdgeInsets(top: 40, left: 0, bottom: 40, right: 0)
+        let image = UIImage(systemName: "folder", withConfiguration: UIImage.SymbolConfiguration(font: .systemFont(ofSize: 22)))
+        let tabBarItem = UITabBarItem()
+        tabBarItem.title = "컬렉션"
+        tabBarItem.image = image
+        tabBarItem.tag = 3
         viewController.tabBarItem = tabBarItem
         let navigationView = UINavigationController(rootViewController: viewController)
         return navigationView
@@ -47,8 +58,11 @@ class TabBarViewController: UITabBarController {
    
     private lazy var myPageViewController: UINavigationController = {
         let viewController = MyPageViewController()
-        let tabBarItem = UITabBarItem(title: "마이", image: UIImage(named: "myPageViewButton"), tag: 4)
-        tabBarItem.imageInsets = UIEdgeInsets(top: 40, left: 0, bottom: 40, right: 0)
+        let image = UIImage(systemName: "person", withConfiguration: UIImage.SymbolConfiguration(font: .systemFont(ofSize: 22)))
+        let tabBarItem = UITabBarItem()
+        tabBarItem.title = "마이"
+        tabBarItem.image = image
+        tabBarItem.tag = 4
         viewController.tabBarItem = tabBarItem
         let navigationView = UINavigationController(rootViewController: viewController)
         return navigationView
@@ -81,8 +95,9 @@ class TabBarViewController: UITabBarController {
 
 extension TabBarViewController {
     func configureTabBar() {
-        self.tabBar.tintColor = .label
+        self.tabBar.unselectedItemTintColor = .label
         self.tabBar.layer.cornerRadius = 20
+        self.tabBar.layer.shadowRadius = 10
         self.tabBar.layer.masksToBounds = true
         self.tabBar.layer.backgroundColor = UIColor.systemBackground.cgColor
         self.tabBar.layer.borderColor = UIColor.lightGray.cgColor
@@ -93,7 +108,6 @@ extension TabBarViewController {
 extension TabBarViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController.tabBarItem.tag == 2 {
-            print("등록 버튼 클릭")
             let modalViewController = RegisterViewController()
             modalViewController.modalPresentationStyle = .fullScreen
             let navigationView = UINavigationController(rootViewController: modalViewController)
@@ -102,6 +116,17 @@ extension TabBarViewController: UITabBarControllerDelegate {
             return false
         } else {
             return true
+        }
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if viewController.tabBarItem.tag == 1 {
+            let image = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(font: .systemFont(ofSize: 24)))?.withTintColor(.blue, renderingMode: .alwaysOriginal)
+            registerViewController.tabBarItem.image = image
+        } else {
+            let image = UIImage(named: "homeButton")?.withRenderingMode(.alwaysOriginal)
+            registerViewController.tabBarItem.image = image
+            registerViewController.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -18, right: 0)
         }
     }
 }
