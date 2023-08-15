@@ -81,7 +81,9 @@ class TabBarViewController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationItem.hidesBackButton = true
+        self.navigationItem.title = "내 주변의 기록"
     }
     
     override func viewDidLayoutSubviews() {
@@ -123,6 +125,7 @@ extension TabBarViewController: UITabBarControllerDelegate {
         if viewController.tabBarItem.tag == 1 {
             let image = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(font: .systemFont(ofSize: 24)))?.withTintColor(.blue, renderingMode: .alwaysOriginal)
             registerViewController.tabBarItem.image = image
+            
         } else {
             let image = UIImage(named: "homeButton")?.withRenderingMode(.alwaysOriginal)
             registerViewController.tabBarItem.image = image

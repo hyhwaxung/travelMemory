@@ -7,5 +7,6 @@ target 'travelMemory' do
 
   # Pods for travelMemory
   pod 'naveridlogin-sdk-ios'
+  pod 'NMapsMap'
 
 end
