@@ -9,6 +9,8 @@ import UIKit
 
 class RegisterView: UIView {
     
+    public let saveButton = UIButton()
+    
     lazy var registerScrollView: RegisterScrollView = {
         let scrollView = RegisterScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -26,6 +28,13 @@ class RegisterView: UIView {
         self.backgroundColor = UIColor.white
         
         setupView(element: registerScrollView, top: 100, right: 0, bottom: -80, left: 0)
+        
+        setupView(element: saveButton, right: 0, bottom: 0, left: 0)
+        saveButton.backgroundColor = .gray
+        saveButton.setTitle("등록하기", for: .normal)
+        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.topAnchor.constraint(equalTo: registerScrollView.bottomAnchor).isActive = true
+        saveButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
     
     required init?(coder: NSCoder) {
