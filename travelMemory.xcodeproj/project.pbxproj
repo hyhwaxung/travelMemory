@@ -13,6 +13,8 @@
 		8E176A722A7799CD006EE253 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E176A712A7799CD006EE253 /* MainViewController.swift */; };
 		8E176A742A779AA5006EE253 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E176A732A779AA5006EE253 /* FavoriteViewController.swift */; };
 		8E176A762A779B1A006EE253 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E176A752A779B1A006EE253 /* MyPageViewController.swift */; };
+		8E1A7A4D2A8B510B00011F68 /* UIView+GrayLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A7A4C2A8B510B00011F68 /* UIView+GrayLine.swift */; };
+		8E1A7A4F2A8B5EAA00011F68 /* UITextField+addPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1A7A4E2A8B5EAA00011F68 /* UITextField+addPadding.swift */; };
 		8E2E41492A7E8CDF00D006EE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E41482A7E8CDF00D006EE /* RegisterViewController.swift */; };
 		8E2E414B2A7E8FDC00D006EE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E414A2A7E8FDC00D006EE /* RegisterView.swift */; };
 		8E2E414D2A7E8FE100D006EE /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E414C2A7E8FE100D006EE /* RegisterModel.swift */; };
@@ -33,6 +35,8 @@
 		8E176A712A7799CD006EE253 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8E176A732A779AA5006EE253 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		8E176A752A779B1A006EE253 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		8E1A7A4C2A8B510B00011F68 /* UIView+GrayLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+GrayLine.swift"; sourceTree = "<group>"; };
+		8E1A7A4E2A8B5EAA00011F68 /* UITextField+addPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+addPadding.swift"; sourceTree = "<group>"; };
 		8E2E41482A7E8CDF00D006EE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8E2E414A2A7E8FDC00D006EE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		8E2E414C2A7E8FE100D006EE /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				8ED5D5422A74273100B0F216 /* UIKit+setupView.swift */,
+				8E1A7A4E2A8B5EAA00011F68 /* UITextField+addPadding.swift */,
+				8E1A7A4C2A8B510B00011F68 /* UIView+GrayLine.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -268,6 +274,8 @@
 				8E176A742A779AA5006EE253 /* FavoriteViewController.swift in Sources */,
 				8ED5D5432A74273100B0F216 /* UIKit+setupView.swift in Sources */,
 				8E2E414D2A7E8FE100D006EE /* RegisterModel.swift in Sources */,
+				8E1A7A4F2A8B5EAA00011F68 /* UITextField+addPadding.swift in Sources */,
+				8E1A7A4D2A8B510B00011F68 /* UIView+GrayLine.swift in Sources */,
 				8E176A762A779B1A006EE253 /* MyPageViewController.swift in Sources */,
 				8E176A6E2A779201006EE253 /* TabBarViewController.swift in Sources */,
 				8E176A722A7799CD006EE253 /* MainViewController.swift in Sources */,
