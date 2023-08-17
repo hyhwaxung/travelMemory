@@ -18,6 +18,15 @@ class MainViewController: UIViewController {
         return mapView
     }()
     
+    private var postList: [Post] = [
+        Post(content: "내용",
+             viewCount: 0,
+             placeTitle: "이디야 동덕여대점",
+             latitude: 37.603502,
+             longitude: 127.042718,
+             dateTime: "20230817")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -30,6 +39,7 @@ class MainViewController: UIViewController {
         naverMapView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
 
         setLocationData()
+        loadPostList()
     }
     
     func setLocationData() {
@@ -43,11 +53,23 @@ class MainViewController: UIViewController {
         let longitude = locationManager.location?.coordinate.longitude ?? 0
         
         print("latitude: \(latitude)")
-        print("longitue: \(longitude)")
+        print("longitude: \(longitude)")
         
         // 네이버지도를 내위치 주변으로 보여지게끔 설정
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude), zoomTo: 16)
         naverMapView.moveCamera(cameraUpdate)
         cameraUpdate.animation = .easeIn
+    }
+    
+    func loadPostList() {
+        
+        for post in self.postList {
+            let latitude = post.latitude
+            let longitude = post.longitude
+            
+            let marker = NMFMarker()
+            marker.position = NMGLatLng(lat: latitude, lng: longitude)
+            marker.mapView = self.naverMapView
+        }
     }
 }
