@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
         print("longitue: \(longitude)")
         
         // 네이버지도를 내위치 주변으로 보여지게끔 설정
-        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude), zoomTo: 7)
+        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude), zoomTo: 16)
         naverMapView.moveCamera(cameraUpdate)
         cameraUpdate.animation = .easeIn
     }
