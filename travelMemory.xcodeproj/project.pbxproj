@@ -18,6 +18,7 @@
 		8E2891412A8E3D2A0053291C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2891402A8E3D2A0053291C /* Post.swift */; };
 		8E2E41492A7E8CDF00D006EE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E41482A7E8CDF00D006EE /* RegisterViewController.swift */; };
 		8E2E414B2A7E8FDC00D006EE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2E414A2A7E8FDC00D006EE /* RegisterView.swift */; };
+		8E38C1D32A91C8B600401E6D /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E38C1D22A91C8B600401E6D /* PostDetailView.swift */; };
 		8ED5D52B2A74257000B0F216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5D52A2A74257000B0F216 /* AppDelegate.swift */; };
 		8ED5D52D2A74257000B0F216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED5D52C2A74257000B0F216 /* SceneDelegate.swift */; };
 		8ED5D5342A74257100B0F216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ED5D5332A74257100B0F216 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		8E2891402A8E3D2A0053291C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		8E2E41482A7E8CDF00D006EE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8E2E414A2A7E8FDC00D006EE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		8E38C1D22A91C8B600401E6D /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		8ED5D5272A74257000B0F216 /* travelMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED5D52A2A74257000B0F216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ED5D52C2A74257000B0F216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				8E176A752A779B1A006EE253 /* MyPageViewController.swift */,
 				8E176A732A779AA5006EE253 /* FavoriteViewController.swift */,
 				8E176A712A7799CD006EE253 /* MainViewController.swift */,
+				8E38C1D22A91C8B600401E6D /* PostDetailView.swift */,
 				8E2891402A8E3D2A0053291C /* Post.swift */,
 				8E176A6F2A779613006EE253 /* RecommendViewController.swift */,
 				8ED5D5382A74257100B0F216 /* Info.plist */,
@@ -279,6 +282,7 @@
 				8E176A762A779B1A006EE253 /* MyPageViewController.swift in Sources */,
 				8E176A6E2A779201006EE253 /* TabBarViewController.swift in Sources */,
 				8E176A722A7799CD006EE253 /* MainViewController.swift in Sources */,
+				8E38C1D32A91C8B600401E6D /* PostDetailView.swift in Sources */,
 				8ED5D5412A7426BC00B0F216 /* LoginView.swift in Sources */,
 				8ED5D52D2A74257000B0F216 /* SceneDelegate.swift in Sources */,
 			);
