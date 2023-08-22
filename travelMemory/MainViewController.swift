@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
 
     var locationManager = CLLocationManager()
     
-    var postDetailView: PostDetailView { return view as! PostDetailView }
+    var detailView = PostDetailView()
     
     private lazy var naverMapView: NMFMapView = {
         let mapView = NMFMapView(frame: view.frame)
@@ -36,13 +36,19 @@ class MainViewController: UIViewController {
              latitude: 37.598027,
              longitude: 127.035140,
              dateTime: "20230820"),
-        
+        Post(content: "내용2",
+             viewCount: 0,
+             placeTitle: "아우어베이커리 숭례문점",
+             latitude: 37.557905,
+             longitude: 126.974032,
+             dateTime: "20230820")
     ]
     
     private var markerList: [NMFMarker] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.naverMapView.touchDelegate = self
         self.view.backgroundColor = .white
         
         self.view.addSubview(naverMapView)
@@ -94,21 +100,21 @@ class MainViewController: UIViewController {
     }
     
     func configurePostDetailView(tappedPost: Post) {
-        let view = PostDetailView()
-        self.naverMapView.addSubview(view)
+        self.naverMapView.addSubview(detailView)
 
-        view.setPostDetail(post: tappedPost)
-        view.layer.cornerRadius = 10
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.leftAnchor.constraint(equalTo: self.naverMapView.leftAnchor, constant: 24).isActive = true
-        view.rightAnchor.constraint(equalTo: self.naverMapView.rightAnchor, constant: -24).isActive = true
-        view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -124).isActive = true
-        view.heightAnchor.constraint(equalToConstant: 240).isActive = true
+        detailView.setPostDetail(post: tappedPost)
+        detailView.layer.cornerRadius = 10
+        detailView.translatesAutoresizingMaskIntoConstraints = false
+        detailView.leftAnchor.constraint(equalTo: self.naverMapView.leftAnchor, constant: 24).isActive = true
+        detailView.rightAnchor.constraint(equalTo: self.naverMapView.rightAnchor, constant: -24).isActive = true
+        detailView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -124).isActive = true
+        detailView.heightAnchor.constraint(equalToConstant: 240).isActive = true
     }
 }
 
 extension MainViewController: NMFMapViewTouchDelegate, NMFMapViewCameraDelegate {
     func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
         print("지도 터치됨")
+        self.detailView.removeFromSuperview()
     }
 }
