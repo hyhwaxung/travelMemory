@@ -113,10 +113,15 @@ extension TabBarViewController: UITabBarControllerDelegate {
             let registerViewController = RegisterViewController()
             registerViewController.hidesBottomBarWhenPushed = true
             registerViewController.navigationItem.title = "내 주변 등록"
+            
+            let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+            backBarButtonItem.tintColor = .gray
+            self.navigationItem.backBarButtonItem = backBarButtonItem
             navigationController?.pushViewController(registerViewController, animated: true)
             
             return false
         } else {
+            self.navigationItem.title = viewController.tabBarItem.title
             return true
         }
     }

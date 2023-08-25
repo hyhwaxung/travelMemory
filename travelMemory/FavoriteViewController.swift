@@ -17,7 +17,7 @@ class FavoriteViewController: UIViewController {
         textLable.font = .systemFont(ofSize: 20)
         textLable.translatesAutoresizingMaskIntoConstraints = false
         
-        self.view.backgroundColor = UIColor.lightGray
+        self.view.backgroundColor = .white
         self.view.addSubview(textLable)
         
         textLable.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
